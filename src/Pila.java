@@ -35,7 +35,7 @@ public class Pila {
         String tipoRetorno = br.readLine();
 
         Rutina nuevaRutina = new Rutina(rutina, tipoRetorno);
-        pilaRutinas[top++] = nuevaRutina;
+        pilaRutinas[++top] = nuevaRutina;
 
     }
 
@@ -51,12 +51,12 @@ public class Pila {
     }
 
     //Este metodo simula retornar la rutina corriendo en el momento o que esta en el top. En el contexto de pilas seria peek
-    public Rutina rutinaActual() {
+    public void rutinaActual() {
         if (estaVacio()) {
             System.out.println("Lo sentimos. La pila esta vacia");
-            return null;
+            return;
         }
-        return pilaRutinas[top];
+        System.out.println(pilaRutinas[top]);
     }
 
     //Este metodo simplemente recorre la pila para imprimir su contenido, en este caso imprimir cada rutina activa

@@ -48,6 +48,7 @@ public class Pila {
         return pilaRutinas[top];
     }
 
+    //Este metodo simplemente recorre la pila para imprimir su contenido, en este caso imprimir cada rutina activa
     public void mostrarPila() {
         if (estaVacio()) {
             System.out.println("Lo sentimos. La pila esta vacia");

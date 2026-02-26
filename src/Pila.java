@@ -1,6 +1,11 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Pila {
     private int top;
     private final Rutina[] pilaRutinas;
+    private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 
     public Pila(int tamano) {
@@ -17,12 +22,18 @@ public class Pila {
     }
 
     //Este metodo simula cuando una rutina es llamada, lo que en pilas seria push
-    public void llamarRutina(String rutina, String tipoRetorno) {
+    public void llamarRutina() throws IOException {
 
         if (estaLleno()) {
             System.out.println("Lo sentimos. La pila esta llena!");
             return;
         }
+        System.out.print("Ingrese el nombre de la rutina: ");
+        String rutina = br.readLine();
+
+        System.out.print("Ingrese el tipo de retorno de la rutina: ");
+        String tipoRetorno = br.readLine();
+
         Rutina nuevaRutina = new Rutina(rutina, tipoRetorno);
         pilaRutinas[top++] = nuevaRutina;
 
